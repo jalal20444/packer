@@ -22,13 +22,13 @@ source "amazon-ebs" "ubuntu" {
   ssh_username  = "ubuntu"
 
   # AMI name with invalid characters removed
-  ami_name = "packer-ubuntu-nginx-docker-${replace(replace(timestamp(), ":", ""), "T", "-")}"
+  ami_name = "DevSecOps-AMI-${replace(replace(timestamp(), ":", ""), "T", "-")}"
 
   vpc_id    = var.vpc_id
   subnet_id = var.subnet_id
 
   tags = {
-    Name = "packer-ubuntu-nginx-docker"
+    Name = "DevSecOps-AMI"
   }
 }
 
